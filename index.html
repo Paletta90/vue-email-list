@@ -11,7 +11,7 @@
     <div id="root">
 
         <ul>
-            <li v-for="(elem) in email">{{elem}}</li>
+            <li v-if="isLoaded == true" v-for="(elem) in email">{{elem}}</li>
         </ul>
 
     </div>

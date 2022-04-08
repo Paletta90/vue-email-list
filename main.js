@@ -1,8 +1,10 @@
 var app = new Vue({
+
     el: '#root',
 
     data: {
         email: [],
+        isLoaded: false
     },
 
     created() {
@@ -11,11 +13,17 @@ var app = new Vue({
                 .then((res) => {
 
                     this.email.push(res.data.response)
-
+                    this.checkIsLoaded();
                 })
         }
-    },
-    methods: {
 
+    },
+
+    methods: {
+        checkIsLoaded: function(){
+            if(this.email.length == 10 ){
+                this.isLoaded = true
+            }
+        }
     }
 })
